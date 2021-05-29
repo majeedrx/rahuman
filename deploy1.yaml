@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+    name: rooban-app
+    labels:
+      app: new-app
+
+spec:
+    replicas: 8
+    selector: 
+      matchLabels:
+        app: new-app
+
+    template:
+      metadata:
+       labels:
+         app: new-app
+
+      spec:
+        containers:
+        - name: majeedrx
+          image: majeedrx/testing:1.0
+      ports:
+        - containerPort: 80
+
+
+
